@@ -1,1 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaker Slider</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="speaker-container">
+        
+        <h2 class="speaker-slider__title">View our Featured Speakers for the Event</h2>
+        <p class="speaker-slider__subtitle">Speakers are core contributors and industry thought leaders working at
+            companies that push for innovation.</p>
+
+        
+        <section class="speaker-overlay" id="speaker-overlay">
+            <div class="speaker-overlay__content">
+                <img src="" alt="Selected Speaker" class="speaker-overlay__image" id="overlayImage">
+
+                
+                <div class="speaker-overlay__info">
+                    
+                    <h3 class="speaker-overlay__name" id="overlayName">Alice Johnson</h3>
+                    <br />
+                    <p class="speaker-overlay__position" id="overlayPosition">Lead Engineer</p>
+                    <br />
+                    <p class="speaker-overlay__company" id="overlayCompany">Specbee</p>
+                    <div class="speaker-overlay__icons">
+                        <a href="https://www.drupal.org" target="_blank" class="speaker-overlay__icon"><i class="fab fa-drupal"></i></a>
+                        <a href="https://twitter.com" target="_blank" class="speaker-overlay__icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank" class="speaker-overlay__icon"><i class="fab fa-linkedin"></i></a>
+                    </div>
+
+                </div>
+                    
+                    <div class="speaker-overlay__separator"></div>
+                    <p class="speaker-overlay__bio" id="overlayBio">Alice is a Lead Engineer with over 10 years of
+                        experience in full-stack development, specializing in cloud-native applications and scalable
+                        systems.</p>
+                    
+                    <button class="speaker-overlay__close" id="closeOverlay" aria-label="Close">&times;</button>
+                
+            </div>
+        </section>
+
+        
+        <section class="speaker-slider">
+            
+            <button class="slider-arrow slider-arrow--left" id="prevBtn">&#10094;</button>
+
+            
+            <div class="speaker-slider__container" id="speakerContainer">
+                
+                <div class="speaker-slider__card" data-name="Alice Johnson" data-position="Lead Engineer"
+                    data-bio="Alice is a Lead Engineer with over 10 years of experience in full-stack development, specializing in cloud-native applications and scalable systems.
+                    Monotonectally synergize business communities rather than client-centric convergence. Assertively unleash cross-platform best practices rather than pandemic total linkage. ">
+                    <img src="images/speaker1.jpg" alt="Alice Johnson" class="speaker-slider__image">
+                    <h3 class="speaker-slider__name">Alice Johnson</h3>
+                    <p class="speaker-slider__position">Lead Engineer</p>
+                </div>
+                <div class="speaker-slider__card" data-name="Bob Smith" data-position="CTO"
+                    data-bio="Bob, the CTO, has a rich background in technology leadership and has guided teams to innovate and build successful tech solutions for over 15 years.
+                    Monotonectally synergize business communities rather than client-centric convergence. Assertively unleash cross-platform best practices rather than pandemic total linkage. ">
+                    <img src="images/speaker2.jpg" alt="Bob Smith" class="speaker-slider__image">
+                    <h3 class="speaker-slider__name">Bob Smith</h3>
+                    <p class="speaker-slider__position">CTO</p>
+                </div>
+                <div class="speaker-slider__card" data-name="Carolyn Davis" data-position="Product Manager"
+                    data-bio="Carolyn is passionate about creating user-centric products, focusing on seamless design and user experience to meet customer needs.
+                    Monotonectally synergize business communities rather than client-centric convergence. Assertively unleash cross-platform best practices rather than pandemic total linkage. ">
+                    <img src="images/speaker3.jpg" alt="Carolyn Davis" class="speaker-slider__image">
+                    <h3 class="speaker-slider__name">Carolyn Davis</h3>
+                    <p class="speaker-slider__position">Product Manager</p>
+                </div>
+                <div class="speaker-slider__card" data-name="David Lee" data-position="UX Designer"
+                    data-bio="David is an experienced UX Designer who specializes in intuitive and accessible design, improving user satisfaction across digital platforms.
+                    Monotonectally synergize business communities rather than client-centric convergence. Assertively unleash cross-platform best practices rather than pandemic total linkage. ">
+                    <img src="images/speaker4.jpg" alt="David Lee" class="speaker-slider__image">
+                    <h3 class="speaker-slider__name">David Lee</h3>
+                    <p class="speaker-slider__position">UX Designer</p>
+                </div>
+                <div class="speaker-slider__card" data-name="Eva Garcia" data-position="Data Scientist"
+                    data-bio="Eva brings a wealth of knowledge in machine learning and data analytics, helping companies leverage data for strategic decision-making.
+                    Monotonectally synergize business communities rather than client-centric convergence. Assertively unleash cross-platform best practices rather than pandemic total linkage. ">
+                    <img src="images/speaker5.jpg" alt="Eva Garcia" class="speaker-slider__image">
+                    <h3 class="speaker-slider__name">Eva Garcia</h3>
+                    <p class="speaker-slider__position">Data Scientist</p>
+                </div>
+                <div class="speaker-slider__card" data-name="Frank Wilson" data-position="AI Researcher"
+                    data-bio="Frank is an AI Researcher focused on cutting-edge artificial intelligence applications in healthcare and automated systems.
+                    Monotonectally synergize business communities rather than client-centric convergence. Assertively unleash cross-platform best practices rather than pandemic total linkage. ">
+                    <img src="images/speaker6.jpg" alt="Frank Wilson" class="speaker-slider__image">
+                    <h3 class="speaker-slider__name">Frank Wilson</h3>
+                    <p class="speaker-slider__position">AI Researcher</p>
+                </div>
+            </div>
+
+            <button class="slider-arrow slider-arrow--right" id="nextBtn">&#10095;</button>
+        </section>
+        <div class="program-button-container">
+            <button class="program-button" id="seeProgramBtn">See the Program</button>
+        </div>
+
+        
+        <section class="full-program" id="fullProgramSection" aria-hidden="true" style="display: none;">
+            <h2>Full Program - Speaker Details</h2>
+            <div class="full-program__speakers" id="fullProgramSpeakers">
+                <!-- Dynamic content for all speakers will be inserted here -->
+            </div>
+            <button class="program-close-button" id="closeProgramBtn" aria-label="Close Program">Close</button>
+        </section>
+        <div id="speakerModal" class="modal" aria-hidden="true">
+            <div class="modal-content">
+                <span class="modal-close" id="modalClose">&times;</span>
+                <img id="modalImage" src="" alt="Speaker Image" class="modal-image">
+                <h3 id="modalName" class="modal-name">Speaker Name</h3>
+                <p id="modalPosition" class="modal-position">Speaker Position</p>
+                <p id="modalCompany" class="modal-company">Company</p>
+                <p id="modalBio" class="modal-bio">Speaker Biography</p>
+                <div class="modal-icons">
+                    <a href="https://www.linkedin.com" target="_blank" class="modal-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com" target="_blank" class="modal-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.drupal.org" target="_blank" class="modal-icon"><i class="fab fa-drupal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>
